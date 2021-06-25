@@ -1,19 +1,11 @@
 <template>
   <div id="tasks">
     <TaskCard
-      :title="tasks[0].title"
-      :description="tasks[0].description"
-      :done="tasks[0].done"
-    ></TaskCard>
-    <TaskCard
-      :title="tasks[1].title"
-      :description="tasks[1].description"
-      :done="tasks[1].done"
-    ></TaskCard>
-    <TaskCard
-      :title="tasks[2].title"
-      :description="tasks[2].description"
-      :done="tasks[2].done"
+      v-for="(task, index) in tasks"
+      :key="index"
+      :title="task.title"
+      :description="task.description"
+      :done="task.done"
     ></TaskCard>
   </div>
 </template>

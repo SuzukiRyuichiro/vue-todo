@@ -1,10 +1,9 @@
 <template>
-    <div class="task-card">
+    <div :class="['task-card', { done: done }]">
       <div>
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
       </div>
-      <div>{{ done ? "✅" : "⭕️" }}</div>
     </div>
 </template>
 
@@ -13,7 +12,7 @@
     props: {
       title: String,
       description: String,
-      done: { type: Boolean, default: false }
+      done: { type: Boolean, default: false },
     },
   }
 </script>
